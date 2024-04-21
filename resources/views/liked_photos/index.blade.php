@@ -14,6 +14,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $photo->title }}</h5>
                                 <p class="card-text">{{ $photo->description }}</p>
+                                <!-- Tombol Unlike -->
                                 <form id="like-form-{{ $photo->id }}" method="POST" action="{{ route('likes.toggle', $photo->id) }}">
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm card-text float-end">❤</button>
