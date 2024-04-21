@@ -11,9 +11,9 @@ class AlbumsAllController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {  
+    {
 
-        $albums = Album::paginate(6); 
+        $albums = Album::paginate(6);
         return view('all', compact('albums'));
     }
 

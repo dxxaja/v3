@@ -19,6 +19,11 @@ class CreateLikesTable extends Migration
             $table->unsignedBigInteger('photo_id');
             $table->timestamps();
 
+            // Definisi foreign key constraint
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('photo_id')->references('id')->on('photos')->onDelete('cascade');
+
+            // Membuat indeks gabungan untuk memastikan user_id dan photo_id unik
             $table->unique(['user_id', 'photo_id']);
         });
     }
